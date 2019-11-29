@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Transactions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace HackDayRobot.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    [Route("/")]
+    public class RouteController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<RouteController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public RouteController(ILogger<RouteController> logger)
         {
             _logger = logger;
         }
@@ -34,6 +35,13 @@ namespace HackDayRobot.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost]
+        [Route("enter-path")]
+        public Input EnterPath([FromBody] Input input)
+        {
+            return input;
         }
     }
 }
