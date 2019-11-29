@@ -5,6 +5,7 @@
     <UserSecretsId>89663d31-2928-4493-8aea-f4d19ab9052c</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
+    <StartupObject>HackDayRobot.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

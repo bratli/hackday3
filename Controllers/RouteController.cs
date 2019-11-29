@@ -41,6 +41,8 @@ namespace HackDayRobot.Controllers
         [Route("enter-path")]
         public Input EnterPath([FromBody] Input input)
         {
+            Robot robot = new Robot();
+            robot.run(input);
             return input;
         }
     }

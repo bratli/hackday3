@@ -5,7 +5,7 @@ namespace HackDayRobot
     public class Input
     {
         public Start Start { get; set; }
-        public IEnumerable<Command> Commands { get; set; } 
+        public List<Command> Commands { get; set; } 
     }
 
     public class Command
